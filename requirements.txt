@@ -4,5 +4,5 @@ streamlit
 joblib
 numpy
 requests
-webdriver
+selenium
 snscrape
