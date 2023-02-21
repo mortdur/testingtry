@@ -5,7 +5,7 @@ import numpy as np
 import streamlit as st
 import streamlit.components.v1 as components
 from PIL import Image
-
+icon = Image.open('img/icon.png')
 st.set_page_config(
 	page_title = 'SaveYourLife Tumor Brain Predict!',
 	page_icon = "🤯",
