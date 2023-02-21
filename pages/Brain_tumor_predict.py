@@ -1,20 +1,27 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
+import streamlit.components.v1 as components
 from PIL import Image
-
+icon = Image.open('img/icon.png')
 st.set_page_config(
-    page_title="SaveYourLife Tumor Brain Predict",
-    page_icon="🤯",
-    initial_sidebar_state="collapsed",
-    layout="wide"
-)
+	page_title = 'SaveYourLife Tumor Brain Predict!',
+	page_icon = icon,
+	layout = 'wide',
+	initial_sidebar_state = 'collapsed',
+	menu_items={
+		'Get Help': 'https://streamlit.io',
+		'Report a bug': 'https://github.com',
+		'About':'About your application: **Hello World!**'
+	}
+	)
+st.sidebar.title("Main Menu")
 
 st.markdown("<h1 style='text-align: center; color: white;'>Predicción de Tumores Cerebrales</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center; color: white;'>Proyecto Deep Learning</h2>", unsafe_allow_html=True)
 
 df = pd.DataFrame( columns = ['Nombre', 'Apellidos','Edad', 'Sexo', 'Numero de la Seguridad Social','Ecg en reposo', 'imagen'])
-image = 'img/cerebro_1.png'
+image = 'img/cerebro.png'
 
 col1, col2, col3 = st.columns(3)
 
@@ -63,3 +70,12 @@ if st.button("Calcular la salida"):
 
     df = df.append(input_data_num, ingnore_index= True)
     print("hola")
+    
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
