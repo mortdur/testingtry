@@ -8,7 +8,7 @@ from PIL import Image
 icon = Image.open('img/icon.png')
 st.set_page_config(
 	page_title = 'SaveYourLife Tumor Brain Predict!',
-	page_icon = "🤯",
+	page_icon = icon,
 	layout = 'wide',
 	initial_sidebar_state = 'collapsed',
 	menu_items={
