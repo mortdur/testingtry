@@ -18,8 +18,8 @@ st.set_page_config(
 	}
 	)
 st.sidebar.title("Main Menu")
-title_container = st.beta_container()
-col1, col2 = st.beta_columns([1, 20])
+title_container = st.container()
+col1, col2 = st.columns([1, 20])
 image = Image.open('img/logo.png')
 with title_container:
    with col1:
