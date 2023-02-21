@@ -1,12 +1,23 @@
+import pandas as pd
+import numpy as np
 import streamlit as st
+import streamlit.components.v1 as components
+from PIL import Image
 from selenium import webdriver
 
+icon = Image.open('img/icon.png')
 st.set_page_config(
-    page_title="SaveYourLife",
-    page_icon="🤯",
-    initial_sidebar_state="collapsed",
-    layout="wide"
-)
+	page_title = 'SaveYourLife Tumor Brain Predict!',
+	page_icon = icon,
+	layout = 'wide',
+	initial_sidebar_state = 'collapsed',
+	menu_items={
+		'Get Help': 'https://streamlit.io',
+		'Report a bug': 'https://github.com',
+		'About':'About your application: **Hello World!**'
+	}
+	)
+st.sidebar.title("Main Menu")
 
 def chatbot(user_input):
     response = ""
@@ -47,3 +58,12 @@ if __name__ == '__main__':
     if st.button('Enviar'):
         response = chatbot(user_input)
         st.write(response)
+        
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
