@@ -25,7 +25,7 @@ with title_container:
    with col1:
     st.image(image, width=100)
    with col2:
-     st.markdown('<h1 style="color: purple;">SaveYourLife</h1>',unsafe_allow_html=True)
+     st.markdown('<h1 style="color: #28cffe;">SaveYourLife</h1>',unsafe_allow_html=True)
 #st.image('img/logo.png')
 #st.title("SaveYourLife Tumor Brain Predict!")
 col1, col2, col3 = st.columns(3)
