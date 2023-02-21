@@ -23,7 +23,7 @@ col1, col2 = st.columns([1, 20])
 image = Image.open('img/logo.png')
 with title_container:
    with col1:
-    st.image(image, width=150)
+    st.image(image, width=100)
    with col2:
      st.markdown('<h1 style="color: purple;">SaveYourLife</h1>',unsafe_allow_html=True)
 #st.image('img/logo.png')
