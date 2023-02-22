@@ -1,4 +1,8 @@
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-header {visibility: hidden;}
+#MainMenu 
 button[title="View fullscreen"]{visibility: hidden;}
+header {visibility: hidden;}
+.css-15zrgzn {display: none;}
+footer {visibility: hidden;}
+
+
+
