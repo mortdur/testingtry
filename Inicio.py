@@ -6,7 +6,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 from PIL import Image
 # LINK TO THE CSS FILE
-with open('style.css')as f:
+with open('.streamlit/style.css')as f:
  st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 icon = Image.open('img/icon.png')
 st.set_page_config(
@@ -29,8 +29,6 @@ with title_container:
     st.image(image, width=130)
    with col2:
      st.markdown('<h1 style="color: #28cffe;">SaveYourLife</h1>',unsafe_allow_html=True)
-#st.image('img/logo.png')
-#st.title("SaveYourLife Tumor Brain Predict!")
 col1, col2, col3 = st.columns(3)
 
 with col1:
