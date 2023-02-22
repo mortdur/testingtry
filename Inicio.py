@@ -43,9 +43,9 @@ with col3:
 with open('.streamlit/style.css')as f:
  st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 st.markdown("""
-        <style>
-        .css-15zrgzn {display: none}
-        .css-eczf16 {display: none}
-        .css-jn99sy {display: none}
-        </style>
-        """, unsafe_allow_html=True)
+<style>
+.viewerBadge_container__1QSob{visibility: hidden;}
+<style>
+        """
+st.markdown(hide, unsafe_allow_html=True)
+
