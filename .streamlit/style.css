@@ -1,6 +1,7 @@
-.css-15zrgzn {display: none}
-.css-eczf16 {display: none}
-.css-jn99sy {display: none}
+button[title="View fullscreen"]{visibility: hidden;}
+header {visibility: hidden;}
+footer {visibility: hidden;}
+a.viewerBadge_container__1QSob {visibility: hidden;}
 
 
 
