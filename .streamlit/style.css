@@ -1,7 +1,7 @@
 button[title="View fullscreen"]{visibility: hidden;}
 header {visibility: hidden;}
-.css-m70y {display:none} 
-.viewerBadge_container__1QSob {display: none}
+.css-m70y {display: hidden;} 
+.viewerBadge_container__1QSob {display: hidden;}
 footer {visibility: hidden;}
 
 
