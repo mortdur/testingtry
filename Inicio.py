@@ -42,10 +42,19 @@ with col3:
 # LINK TO THE CSS FILE
 with open('.streamlit/style.css')as f:
  st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
-st.markdown("""
+hide="""
 <style>
-.viewerBadge_container__1QSob{visibility: hidden;}
+footer{
+	visibility: hidden;
+    position: relative;
+}
+.viewerBadge_container__1QSob{
+    visibility: hidden;
+}
+#MainMenu{
+	visibility: hidden;
+}
 <style>
-        """
+"""
 st.markdown(hide, unsafe_allow_html=True)
 
