@@ -47,6 +47,8 @@ hide_st_style = """
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             header {visibility: hidden;}
+	    .element-container:nth-child(3) .overlayBtn {visibility: hidden;}
+	    .element-container:nth-child(12) .overlayBtn {visibility: hidden;}
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
