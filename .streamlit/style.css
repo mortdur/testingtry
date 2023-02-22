@@ -1,9 +1,12 @@
 button[title="View fullscreen"]{visibility: hidden;}
 header {visibility: hidden;}
-footer {visibility: hidden;}
-a.viewerBadge.container__1QSob {visibility: hidden;}
-
-
+footer{
+	visibility: hidden;
+    position: relative;
+}
+.viewerBadge_container__1QSob{
+    visibility: hidden;
+}
 
 
 
