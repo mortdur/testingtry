@@ -31,7 +31,7 @@ menu_id = hc.nav_bar(
     login_name='Logout',
     hide_streamlit_markers=False, #will show the st hamburger as well as the navbar now!
     sticky_nav=True, #at the top or not
-    sticky_mode='pinned', #jumpy or not-jumpy, but sticky or pinned
+    sticky_mode='sticky', #jumpy or not-jumpy, but sticky or pinned
 )
 
 if st.button('click me'):
