@@ -6,3 +6,5 @@ numpy
 requests
 selenium
 snscrape
+hydralit_components
+datetime
