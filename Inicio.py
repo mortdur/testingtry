@@ -11,7 +11,7 @@ def main():
     st.set_page_config(page_title="Mi página con Streamlit y Bootstrap")
 
     # Crear un contenedor con Streamlit
-    with st.beta_container():
+    with st.container():
         # Agregar la barra de navegación de Bootstrap
         st.markdown(
             """
