@@ -7,11 +7,6 @@ import streamlit.components.v1 as components
 from PIL import Image
 import hydralit_components as hc
 import datetime
-
-#make it look nice from the start
-st.set_page_config(layout='wide',initial_sidebar_state='collapsed',)
-import streamlit as st
-
 def main():
     st.set_page_config(page_title="Mi página con Streamlit y Bootstrap")
 
