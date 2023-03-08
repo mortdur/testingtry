@@ -10,118 +10,55 @@ import datetime
 
 #make it look nice from the start
 st.set_page_config(layout='wide',initial_sidebar_state='collapsed',)
-st.markdown("""
-<!DOCTYPE html>
-<html lang="en">
+import streamlit as st
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navbar</title>
+def main():
+    st.set_page_config(page_title="Mi página con Streamlit y Bootstrap")
 
-    <link rel="stylesheet" href="/fontawesome/css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
-    ">
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-
-    <header>
-
-        <div class="container-fluid">
-
-            <div class="navb-logo">
-                <img src="/img/logo.png" alt="Logo">
-            </div>
-
-            <div class="navb-items d-none d-xl-flex">
-
-                <div class="item">
-                    <a href="/">Home</a>
+    # Crear un contenedor con Streamlit
+    with st.beta_container():
+        # Agregar la barra de navegación de Bootstrap
+        st.markdown(
+            """
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Mi página</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                  </ul>
                 </div>
+              </div>
+            </nav>
+            """,
+            unsafe_allow_html=True
+        )
 
-                <div class="item">
-                    <a href="/services">Services</a>
-                </div>
+        # Agregar el formulario de búsqueda
+        st.markdown(
+            """
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            """
+            , unsafe_allow_html=True
+        )
 
-                <div class="item">
-                    <a href="/cases">Cases</a>
-                </div>
+        # Agregar contenido adicional
+        st.header("Bienvenidos a mi página")
+        st.write("Esta es una página creada con Streamlit y Bootstrap.")
 
-                <div class="item">
-                    <a href="/about">About</a>
-                </div>
-
-                <div class="item-button">
-                    <a href="/contact" type="button">Let's talk</a>
-                </div>
-            </div>
-
-            <!-- Button trigger modal -->
-            <div class="mobile-toggler d-lg-none">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#navbModal">
-                    <i class="fa-solid fa-bars"></i>
-                </a>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="navbModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-
-                        <div class="modal-header">
-                            <img src="/img/logo-variant.png" alt="Logo">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-
-                        <div class="modal-body">
-                            
-                            <div class="modal-line">
-                                <i class="fa-solid fa-house"></i><a href="/">Home</a>
-                            </div>
-
-                            <div class="modal-line">
-                                <i class="fa-solid fa-bell-concierge"></i><a href="/services">Services</a>
-                            </div>
-
-                            <div class="modal-line">
-                                <i class="fa-solid fa-file-lines"></i> <a href="/cases">Cases</a>
-                            </div>
-
-                            <div class="modal-line">
-                                <i class="fa-solid fa-circle-info"></i><a href="/about">About</a>
-                            </div>
-
-                            <a href="/contact" class="navb-button" type="button">Let's talk</a>
-                        </div>
-
-                        <div class="mobile-modal-footer">
-                            
-                            <a target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a target="_blank" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a target="_blank" href="#"><i class="fa-brands fa-youtube"></i></a>
-                            <a target="_blank" href="#"><i class="fa-brands fa-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </header>
-
-    <section class="section-1">
-
-        <p>time, diamonds and others relics</p>
-    </section>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js
-    "></script>
-</body>
-
-</html>
-""", unsafe_allow_html=True)
+if __name__ == "__main__":
+    main()
