@@ -43,5 +43,6 @@ st.markdown("""
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 """, unsafe_allow_html=True)
 
-#CCS
-css = importar_css()
+# LINK TO THE CSS FILE
+with open('.streamlit/style.css')as f:
+ st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
