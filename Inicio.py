@@ -4,6 +4,13 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 from PIL import Image
+from st_pages import show_pages_from_config
+from functions import *
+#PageConfig
+page_config = importar_config()
+#Menu
+show_pages_from_config()
+
 st.markdown("""
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 """, unsafe_allow_html=True)
