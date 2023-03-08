@@ -61,10 +61,5 @@ st.markdown("""
 st.markdown("""
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
 """, unsafe_allow_html=True)
-
-        # Agregar contenido adicional
-        st.header("Bienvenidos a mi página")
-        st.write("Esta es una página creada con Streamlit y Bootstrap.")
-
 if __name__ == "__main__":
     main()
