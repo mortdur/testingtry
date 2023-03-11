@@ -8,3 +8,5 @@ selenium
 snscrape
 hydralit_components
 datetime
+plotly_express
+numerize
