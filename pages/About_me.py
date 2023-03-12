@@ -9,7 +9,7 @@ st.set_page_config(page_title = 'Facebook Ad Campaign Dashboard',
 
 @st.cache
 def get_data():
-    df = pd.read_csv('data/data.csv')
+    df = pd.read_csv('data/total-cancer-deaths-by-type.csv')
     df['date']= pd.to_datetime(df['date'])
     return df
 
