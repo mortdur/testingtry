@@ -1,5 +1,3 @@
-import pandas as pd
-import streamlit as st
 import plotly.express as px
 from numerize.numerize import numerize
 
@@ -9,8 +7,8 @@ st.set_page_config(page_title = 'Facebook Ad Campaign Dashboard',
 
 @st.cache
 def get_data():
-    df = pd.read_csv('data/total-cancer-deaths-by-type.csv')
-    df['Year']= pd.to_datetime(df['Year'])
+    df = pd.read_csv('data/data.csv')
+    df['date']= pd.to_datetime(df['date'])
     return df
 
 df = get_data()
@@ -48,7 +46,7 @@ total1,total2,total3,total4,total5 = st.columns(5,gap='large')
 with total1:
     st.image('images/impression.png',use_column_width='Auto')
     st.metric(label = 'Total Impressions', value= numerize(total_impressions))
-    
+
 with total2:
     st.image('images/tap.png',use_column_width='Auto')
     st.metric(label='Total Clicks', value=numerize(total_clicks))
@@ -93,7 +91,7 @@ with Q2:
                                         xaxis =(dict(showgrid = False)),
                                         yaxis =(dict(showgrid = False)),)
     st.plotly_chart(fig_impressions_per_day,use_container_width=True)
-  
+
 Q3,Q4 = st.columns(2)
 
 with Q3:
