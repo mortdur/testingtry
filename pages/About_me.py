@@ -4,14 +4,14 @@ import plotly.express as px
 from numerize.numerize import numerize
 
 
-st.set_page_config(page_title = 'Facebook Ad Campaign Dashboard',
+st.set_page_config(page_title = 'SaveYourLife Dashboard',
                     layout='wide',
                     initial_sidebar_state='collapsed')
 
 @st.cache
 def get_data():
-    df = pd.read_csv('data/data.csv')
-    df['date']= pd.to_datetime(df['date'])
+    df = pd.read_csv('data/europa_df.csv')
+    df['Año']= pd.to_datetime(df['Año'])
     return df
 
 df = get_data()
@@ -19,57 +19,37 @@ df = get_data()
 header_left,header_mid,header_right = st.columns([1,2,1],gap='large')
 
 with header_mid:
-    st.title('Facebook Campaign Dashboard')
+    st.title('SaveYourLife Dashboard')
 
 
 with st.sidebar:
-    Campaign_filter = st.multiselect(label= 'Select The Campaign',
-                                options=df['campaign'].unique(),
-                                default=df['campaign'].unique())
+    Campaign_filter = st.multiselect(label= 'Selecciona Un Pais',
+                                options=df['Región'].unique(),
+                                default=df['Región'].unique())
 
     Age_filter = st.multiselect(label='Select Age Group',
-                            options=df['age'].unique(),
-                            default=df['age'].unique())
+                            options=df['Cáncer de mama'].unique(),
+                            default=df['Cáncer de mama'].unique())
 
     Gender_filter = st.multiselect(label='Select Gender Group',
-                            options=df['gender'].unique(),
-                            default=df['gender'].unique())
+                            options=df['Cáncer de piel maligno'].unique(),
+                            default=df['Cáncer de piel maligno'].unique())
 
-df1 = df.query('campaign == @Campaign_filter & age == @Age_filter & gender == @Gender_filter')
+df1 = df.query('Región == @Campaign_filter & Cáncer de mama == @Age_filter & Cáncer de piel maligno == @Gender_filter')
 
-total_impressions = float(df1['Impressions'].sum())
-total_clicks = float(df1['Clicks'].sum())
-total_spent = float(df1['Spent'].sum())
-total_conversions= float(df1['Total_Conversion'].sum()) 
-total_approved_conversions = float(df1['Approved_Conversion'].sum())
+total_impressions = float(df1['numero de muertes totales'].sum())
+#total_clicks = float(df1['Clicks'].sum())
+#total_spent = float(df1['Spent'].sum())
+#total_conversions= float(df1['Total_Conversion'].sum()) 
+#total_approved_conversions = float(df1['Approved_Conversion'].sum())
 
-
-total1,total2,total3,total4,total5 = st.columns(5,gap='large')
-
-with total1:
-    st.image('images/impression.png',use_column_width='Auto')
-    st.metric(label = 'Total Impressions', value= numerize(total_impressions))
-
-with total2:
-    st.image('images/tap.png',use_column_width='Auto')
-    st.metric(label='Total Clicks', value=numerize(total_clicks))
-
-with total3:
-    st.image('images/hand.png',use_column_width='Auto')
-    st.metric(label= 'Total Spend',value=numerize(total_spent,2))
-
-with total4:
-    st.image('images/conversion.png',use_column_width='Auto')
-    st.metric(label='Total Conversions',value=numerize(total_conversions))
-
-with total5:
-    st.image('images/app_conversion.png',use_column_width='Auto')
-    st.metric(label='Approved Conversions',value=numerize(total_approved_conversions))
+st.image('images/impression.png',use_column_width='Auto')
+st.metric(label = 'Total Impressions', value= numerize(total_impressions))
 
 Q1,Q2 = st.columns(2)
 
 with Q1:
-    df3 = df1.groupby(by = ['campaign']).sum()[['Impressions','Clicks']].reset_index()
+    df3 = df1.groupby(by = ['Región']).sum()[['numero de muertes totales']].reset_index()
     df3['CTR'] =round(df3['Clicks']/df3['Impressions'] *100,3)
     fig_CTR_by_campaign = px.bar(df3,
                             x='campaign',
